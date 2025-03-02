@@ -1,0 +1,25 @@
+.hero-section {
+    width: 100vw;  /* Full width */
+    height: 65vh;  /* 65% of viewport height */
+    overflow: hidden;
+    margin: 0;  /* Remove any margins */
+    padding: 0;  /* Remove any padding */
+  }
+  
+  .carousel,
+  .carousel img {
+    width: 100vw;  /* Ensure full width */
+    height: 65vh;  /* Maintain height */
+    object-fit: cover; /* Crop image without distortion */
+  }
+  
+  .carousel-caption {
+    background: rgba(31, 149, 228, 0.42);  /* Dark overlay for better readability */
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin: 0;  /* Remove margin */
+  }
+  
+
+  
