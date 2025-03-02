@@ -29,27 +29,33 @@ const BestDestination = () => {
   };
 
   return (
-    <div className="relative w-full  p-6">
+    <div className="grid" style={{alignItems:'center', margin: '50px'}} >
+
       {/* Title and Buttons Aligned Horizontally */}
-      <div className="flex">
-        <h2 className="text-3xl font-bold flex-grow">Best Destination to Visit</h2>
-        <div className="flex gap-6">
-               <button onClick={() => scroll("left")} className="p-3 bg-white rounded-full shadow-md">
-              <ChevronLeft size={20} />
-              </button>
-              <button onClick={() => scroll("right")} className="p-3 bg-white rounded-full shadow-md">
-               <ChevronRight size={20} />
-            </button>
+      <div style={{ display: 'flex', justifyContent: 'space-between',marginTop: '20px' }}>
+  <h2 className="text-3xl font-bold">Best Destination to Visit</h2>
+  <div className="flex gap-6">
+    <button 
+      onClick={() => scroll("left")} 
+      className="p-6 bg-white rounded-full shadow-md flex items-center justify-center"
+    >
+      <ChevronLeft size={24} />
+    </button>
+    <button 
+      onClick={() => scroll("right")} 
+      className="p-6 bg-white rounded-full shadow-md flex items-center justify-center"
+    >
+      <ChevronRight size={24} />
+    </button>
   </div>
 </div>
-
 
 
       {/* Scrollable Horizontal List */}
       <div
         ref={scrollRef}
-        className="flex gap-x-8 overflow-x-auto  no-scrollbar scroll-smooth px-12"
-        style={{ scrollSnapType: "x mandatory", display: "flex", flexDirection: "row", justifyContent: "center" }}
+        className="flex gap-x-8 overflow-x-auto  no-scrollbar scroll-smooth px-6"
+        style={{ scrollSnapType: "x mandatory", display: "flex", flexDirection: "row", justifyContent: "center",}}
       >
         {destinations.map((destination, index) => (
           <div
@@ -58,10 +64,10 @@ const BestDestination = () => {
               index === activeIndex ? "scale-110" : "scale-90 opacity-80"
             }`}
             style={{
-              width: index === activeIndex ? "550px" : "500px",
-              height: index === activeIndex ? "650px" : "600px",
               scrollSnapAlign: "center",
-              padding: "16px", // Added padding around the list items
+              margin:'20px',
+              width:'400px',
+              padding: "6px", // Added padding around the list items
             }}
           >
             <img
@@ -69,8 +75,10 @@ const BestDestination = () => {
               alt={destination.name}
               className="w-full h-[60%] object-cover rounded-t-lg" // Ensuring consistent image size
               style={{
-                height: "60%", // Set image height to make them equal
-                objectFit: "cover", // Ensures images cover the area without stretching
+                height: "60%", 
+                width:"100%",// Set image height to make them equal
+                objectFit: "cover",
+                alignItems:'center' // Ensures images cover the area without stretching
               }}
             />
             <div className="p-4">

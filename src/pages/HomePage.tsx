@@ -1,4 +1,5 @@
 import Footer from '../components/Footer';
+import Hero from '../components/Hero';
 import SliderPage from '../components/SliderPage';
 import BestDestination from '../components/home/BestDestnation';
 import HorizontalBar from '../components/home/HorizontalBar';
@@ -10,7 +11,7 @@ import "./Home.css";
 const HomePage = () => {
   return (
     <>
-    <SliderPage/>
+    <Hero/>
     <BestDestination/>
     <LatestNews/>
     <HorizontalBar/>

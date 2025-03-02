@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from '../assets/logo.png';
+import './Footer.css'; // Importing external CSS for better management
 
 // Sample links for social media, registrations, and subscriptions
 const footerLinks = {
@@ -19,20 +21,16 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#222', color: 'white', padding: '40px 20px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+    <footer className="footer">
+      <div className="footer-top">
         {/* Left Section: Logo and Company Name */}
-        <div style={{ flex: '1', marginRight: '20px', textAlign: 'left' }}>
-          <img
-            src="https://via.placeholder.com/150" // Replace with your logo URL
-            alt="Company Logo"
-            style={{ width: '150px', marginBottom: '10px' }}
-          />
-          <h2>TravelEthiopia</h2>
+        <div className="footer-left">
+          <img src={logo} alt="Company Logo" className="footer-logo" />
+          <h2>getethioTravel</h2>
         </div>
 
         {/* Right Section: Description of Travel and Tours in Ethiopia */}
-        <div style={{ flex: '2', marginRight: '20px', textAlign: 'right' }}>
+        <div className="footer-right">
           <h3>Explore the beauty of Ethiopia</h3>
           <p>
             Experience the rich history, diverse landscapes, and unique culture of Ethiopia. From the
@@ -44,14 +42,14 @@ const Footer = () => {
       </div>
 
       {/* Links Section (Social Media, Registrations, Subscriptions) */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', marginTop: '30px' }}>
+      <div className="footer-links">
         {/* Social Media Links */}
-        <div style={{ flex: '1', marginBottom: '20px' }}>
+        <div className="footer-links-column">
           <h4>Follow Us</h4>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
+          <ul>
             {footerLinks.socialMedia.map((link, index) => (
               <li key={index}>
-                <a href={link.url} style={{ color: 'white', textDecoration: 'none' }}>
+                <a href={link.url} aria-label={`Follow us on ${link.name}`} className="footer-link">
                   {link.name}
                 </a>
               </li>
@@ -60,12 +58,12 @@ const Footer = () => {
         </div>
 
         {/* Registrations Links */}
-        <div style={{ flex: '1', marginBottom: '20px' }}>
+        <div className="footer-links-column">
           <h4>Register</h4>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
+          <ul>
             {footerLinks.registrations.map((link, index) => (
               <li key={index}>
-                <a href={link.url} style={{ color: 'white', textDecoration: 'none' }}>
+                <a href={link.url} aria-label={`Go to ${link.name}`} className="footer-link">
                   {link.name}
                 </a>
               </li>
@@ -74,12 +72,12 @@ const Footer = () => {
         </div>
 
         {/* Subscriptions Links */}
-        <div style={{ flex: '1', marginBottom: '20px' }}>
+        <div className="footer-links-column">
           <h4>Subscribe</h4>
-          <ul style={{ listStyleType: 'none', padding: 0 }}>
+          <ul>
             {footerLinks.subscriptions.map((link, index) => (
               <li key={index}>
-                <a href={link.url} style={{ color: 'white', textDecoration: 'none' }}>
+                <a href={link.url} aria-label={`Subscribe to ${link.name}`} className="footer-link">
                   {link.name}
                 </a>
               </li>
@@ -89,7 +87,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div style={{ textAlign: 'center', marginTop: '40px', fontSize: '0.9em' }}>
+      <div className="footer-bottom">
         <p>&copy; 2025 TravelEthiopia. All Rights Reserved.</p>
       </div>
     </footer>
