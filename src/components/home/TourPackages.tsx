@@ -29,6 +29,7 @@ const TourPackages = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between',marginTop: '20px' }}>
   <h2 className="text-3xl font-bold">Explore Tours and Packages</h2>
   <div className="flex gap-6">
+    
     <button 
       onClick={() => scroll("left")} 
       className="p-6 bg-white rounded-full shadow-md flex items-center justify-center"

@@ -30,11 +30,10 @@ const BestDestination = () => {
 
   return (
     <div className="grid" style={{alignItems:'center', margin: '50px'}} >
-
-      {/* Title and Buttons Aligned Horizontally */}
       <div style={{ display: 'flex', justifyContent: 'space-between',marginTop: '20px' }}>
   <h2 className="text-3xl font-bold">Best Destination to Visit</h2>
   <div className="flex gap-6">
+
     <button 
       onClick={() => scroll("left")} 
       className="p-6 bg-white rounded-full shadow-md flex items-center justify-center"
@@ -54,8 +53,15 @@ const BestDestination = () => {
       {/* Scrollable Horizontal List */}
       <div
         ref={scrollRef}
-        className="flex gap-x-8 overflow-x-auto  no-scrollbar scroll-smooth px-6"
-        style={{ scrollSnapType: "x mandatory", display: "flex", flexDirection: "row", justifyContent: "center",}}
+        className="flex gap-8 overflow-x-auto overflow-y-hidden no-scrollbar scroll-smooth px-12"
+        style={{ 
+          scrollSnapType: "x mandatory",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-center",
+            height: "500px",
+        
+        }}
       >
         {destinations.map((destination, index) => (
           <div
